@@ -19,7 +19,7 @@ contactController.getContacts = async (req, res) => {
 contactController.getContactById = async (req, res) => {
     try {
         const id = parseInt(req.params.id);
-        console.log(req.params.id)
+        // console.log(req.params.id)
         const database = mongodb.getDb().db('cse341');
 
         const collection = database.collection('contacts');
