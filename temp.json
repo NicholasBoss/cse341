@@ -1,0 +1,28 @@
+{
+    "contacts": [
+        {
+            "id": 1,
+            "firstName": "Jill",
+            "lastName": "Boss",
+            "email": "jillboss@gmail.com",
+            "favoriteColor": "Teal",
+            "birthday": "June 26, 1970"
+        },
+        {
+            "id": 2,
+            "firstName": "Bret",
+            "lastName": "Boss",
+            "email": "bretboss@gmail.com",
+            "favoriteColor": "Auburne",
+            "birthday": "Oct 5, 1971"
+        },
+        {
+            "id": 3,
+            "firstName": "Melanie",
+            "lastName": "Ulrich",
+            "email": "melaniegboss@gmail.com",
+            "favoriteColor": "Yellow",
+            "birthday": "June 30, 1992"
+        }
+    ]
+}

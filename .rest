@@ -1,0 +1,17 @@
+# REST Client for Visual Studio Code
+
+## Local Development
+### Get All Contacts
+GET http://localhost:3000/contacts
+
+### Get Contact 1
+GET http://localhost:3000/contacts/1
+
+### Get Contact 2
+GET http://localhost:3000/contacts/2
+
+### Get Contact 3
+GET http://localhost:3000/contacts/3
+
+## Production Development
+### Get All Contacts
