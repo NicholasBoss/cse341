@@ -15,3 +15,13 @@ GET http://localhost:3000/contacts/3
 
 ## Production Development
 ### Get All Contacts
+GET https://cse341-spring25-7x6l.onrender.com/contacts
+
+### Get Contact 1
+GET https://cse341-spring25-7x6l.onrender.com/contacts/1
+
+### Get Contact 2
+GET https://cse341-spring25-7x6l.onrender.com/contacts/2
+
+### Get Contact 3
+GET https://cse341-spring25-7x6l.onrender.com/contacts/3
