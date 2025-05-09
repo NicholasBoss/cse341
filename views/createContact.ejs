@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Contact</title>
+</head>
+<body>
+    <form action="http://localhost:3000/contacts/createContact" method="post">
+        <label>
+            <b>First Name:</b>
+            <input type="text" name="firstName" required>
+        </label><br>
+        <label>
+            <b>Last Name:</b>
+            <input type="text" name="lastName" required>
+        </label><br>
+        <label>
+            <b>Email:</b>
+            <input type="email" name="email" required>
+        </label><br>
+        <label>
+            <b>Favorite Color:</b>
+            <input type="text" name="favoriteColor" required>
+        </label><br>
+        <label>
+            <b>Birthday:</b>
+            <input type="date" name="birthday" required>
+        </label><br>
+        <button type="submit">Create Contact</button>
+
+    </form>
+</body>
+</html>

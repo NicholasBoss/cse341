@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      body-parser:
+        specifier: ^2.2.0
+        version: 2.2.0
       dotenv:
         specifier: ^16.5.0
         version: 16.5.0
       express:
         specifier: ^5.1.0
         version: 5.1.0
+      express-ejs-layouts:
+        specifier: ^2.5.1
+        version: 2.5.1
       mongodb:
         specifier: ^6.16.0
         version: 6.16.0
@@ -143,6 +149,9 @@ packages:
   etag@1.8.1:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
+
+  express-ejs-layouts@2.5.1:
+    resolution: {integrity: sha512-IXROv9n3xKga7FowT06n1Qn927JR8ZWDn5Dc9CJQoiiaaDqbhW5PDmWShzbpAa2wjWT1vJqaIM1S6vJwwX11gA==}
 
   express@5.1.0:
     resolution: {integrity: sha512-DT9ck5YIRU+8GYzzU5kT3eHGA5iL+1Zd0EutOmTE9Dtk+Tvuzd23VBU+ec7HPNSTxXYO55gPV/hq4pSBJDjFpA==}
@@ -576,6 +585,8 @@ snapshots:
   escape-html@1.0.3: {}
 
   etag@1.8.1: {}
+
+  express-ejs-layouts@2.5.1: {}
 
   express@5.1.0:
     dependencies:

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Contact</title>
+</head>
+<body>
+    <form action="http://localhost:3000/contacts/updateContact/4" method="post">
+        <label>
+            <b>Contact ID:</b>
+            <input type="number" name="id">
+        </label><br>
+        <label>
+            <b>First Name:</b>
+            <input type="text" name="firstName">
+        </label><br>
+        <label>
+            <b>Last Name:</b>
+            <input type="text" name="lastName">
+        </label><br>
+        <label>
+            <b>Email:</b>
+            <input type="email" name="email">
+        </label><br>
+        <label>
+            <b>Favorite Color:</b>
+            <input type="text" name="favoriteColor">
+        </label><br>
+        <label>
+            <b>Birthday:</b>
+            <input type="date" name="birthday">
+        </label><br>
+        <button type="submit">Update Contact</button>
+
+    </form>
+</body>
+</html>

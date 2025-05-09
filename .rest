@@ -13,6 +13,34 @@ GET http://localhost:3000/contacts/2
 ### Get Contact 3
 GET http://localhost:3000/contacts/3
 
+### Create Contact
+POST http://localhost:3000/contacts/createContact
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "jondoe@mail.com",
+    "favoriteColor": "Black",
+    "birthday": "1985-04-11"
+}
+
+### Update Contact
+PUT http://localhost:3000/contacts/updateContact/4
+Content-Type: application/json
+
+{
+    "id": 4,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "jondoe@mail.com",
+    "favoriteColor": "Orange",
+    "birthday": "1985-04-11"
+}
+
+### Delete Contact
+DELETE http://localhost:3000/contacts/deleteContact/4
+
 ## Production Development
 ### Get All Contacts
 GET https://cse341-spring25-7x6l.onrender.com/contacts
@@ -25,3 +53,31 @@ GET https://cse341-spring25-7x6l.onrender.com/contacts/2
 
 ### Get Contact 3
 GET https://cse341-spring25-7x6l.onrender.com/contacts/3
+
+### Create Contact
+POST https://cse341-spring25-7x6l.onrender.com/contacts/createContact
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "jondoe@mail.com",
+    "favoriteColor": "Black",
+    "birthday": "1985-04-11"
+}
+
+### Update Contact
+PUT https://cse341-spring25-7x6l.onrender.com/contacts/updateContact/4
+Content-Type: application/json
+
+{
+    "id": 4,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "jondoe@mail.com",
+    "favoriteColor": "Orange",
+    "birthday": "1985-04-11"
+}
+
+### Delete Contact
+DELETE https://cse341-spring25-7x6l.onrender.com/contacts/deleteContact/4
