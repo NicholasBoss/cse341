@@ -5,7 +5,7 @@
     "description": "API for managing Contacts",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://cse341-spring25-7x6l.onrender.com/",
   "basePath": "/",
   "schemes": [
     "http"
@@ -160,6 +160,16 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
