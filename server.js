@@ -18,7 +18,7 @@ app.use(expressLayouts)
 
 app.use(static);
 app.use('/', routes);
-app.use('/contacts', contactRoute)
+// app.use('/contacts', contactRoute)
 
 const startServer = async () => {
   try {

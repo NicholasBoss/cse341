@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "swagger": "node ./swagger.js"
   },
   "keywords": [],
   "author": "Nicholas Boss",
@@ -17,6 +18,10 @@
     "express": "^5.1.0",
     "express-ejs-layouts": "^2.5.1",
     "mongodb": "^6.16.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "swagger-autogen": "^2.23.7"
   }
 }
