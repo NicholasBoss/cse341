@@ -5,7 +5,7 @@ const doc = {
     title: "Contacts API",
     description: "API for managing Contacts",
   },
-  host: "localhost:8080",
+  host: "https://cse341-spring25-7x6l.onrender.com/",
   schemes: ["http"],
 };
 const outputFile = "./swagger.json";
