@@ -6,7 +6,7 @@ const doc = {
     description: "API for managing Contacts",
   },
   host: "cse341-spring25-7x6l.onrender.com",
-  schemes: ["http"],
+  schemes: ["https"],
 };
 const outputFile = "./swagger.json";
 const endpointsFiles = ["./routes/index.js"];
