@@ -55,7 +55,7 @@ GET https://cse341-spring25-7x6l.onrender.com/contacts/2
 GET https://cse341-spring25-7x6l.onrender.com/contacts/3
 
 ### Create Contact
-POST https://cse341-spring25-7x6l.onrender.com/contacts/createContact
+POST https://cse341-spring25-7x6l.onrender.com/contacts/
 Content-Type: application/json
 
 {
@@ -67,7 +67,7 @@ Content-Type: application/json
 }
 
 ### Update Contact
-PUT https://cse341-spring25-7x6l.onrender.com/contacts/updateContact/4
+PUT https://cse341-spring25-7x6l.onrender.com/contacts/4
 Content-Type: application/json
 
 {
@@ -80,4 +80,4 @@ Content-Type: application/json
 }
 
 ### Delete Contact
-DELETE https://cse341-spring25-7x6l.onrender.com/contacts/deleteContact/4
+DELETE https://cse341-spring25-7x6l.onrender.com/contacts/4
