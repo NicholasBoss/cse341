@@ -8,7 +8,7 @@
   "host": "cse341-spring25-7x6l.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/": {
