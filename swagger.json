@@ -45,11 +45,17 @@
                 "firstName": {
                   "example": "any"
                 },
+                "lastName": {
+                  "example": "any"
+                },
                 "email": {
                   "example": "any"
                 },
-                "id": {
+                "favoriteColor": {
                   "example": "any"
+                },
+                "birthday": {
+                  "example": "0000-00-00"
                 }
               }
             }
@@ -107,7 +113,22 @@
               "type": "object",
               "properties": {
                 "id": {
+                  "example": 1
+                },
+                "firstName": {
                   "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "favoriteColor": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "0000-00-00"
                 }
               }
             }
