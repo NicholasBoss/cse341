@@ -9,7 +9,7 @@ contactController.getContacts = async (req, res) => {
 
         const collection = database.collection('contacts');
 
-        const data = await collection.findOne();
+        const data = await collection.find({}).toArray();
         res.status(200).json(data)
     } catch (error) {
         res.status(500).json({ error: error.message })
@@ -24,11 +24,10 @@ contactController.getContactById = async (req, res) => {
 
         const collection = database.collection('contacts');
 
-        let contact =  await collection.findOne({ "contacts.id": id });
+        const contact =  await collection.findOne({ "contact_id": id });
         if (!contact) {
             return res.status(404).json({ error: 'Contact not found' });
         }
-        contact = contact.contacts.find(contact => contact.id === id);
 
         res.status(200).json(contact)
     } catch (error) {
@@ -53,17 +52,15 @@ contactController.createContact = async (req, res) => {
 
         const collection = database.collection('contacts');
 
-        const doc = await collection.findOne({});
-
-        const maxId = doc.contacts.reduce((max, c) => Math.max(max, c.id || 0), 0);
-        const nextId = maxId + 1;
-        // console.log(nextId)
-
-        newContact.id = parseInt(nextId);
+        // get the max id from the contacts collection (the contact_id field but do not create a contact array)
+        const maxId = await collection.find({}).sort({ contact_id: -1 }).limit(1).toArray();
+        // get the next id
+        const nextId = maxId.length > 0 ? maxId[0].contact_id + 1 : 1;
 
         console.log(newContact)
 
-        const result = await collection.updateOne({}, { $push: { contacts: newContact } });
+        // insert new contact as a new document
+        const result = await collection.insertOne({ ...newContact, contact_id: nextId });
         if (result.modifiedCount === 0) {
             return res.status(400).json({ error: 'Failed to create contact' });
         }
@@ -79,17 +76,18 @@ contactController.updateContact = async (req, res) => {
         console.log(req.body)
         const id = parseInt(req.params.id);
         const updatedContact = req.body;
-        // change updatedContact.id to a number
-        updatedContact.id = parseInt(updatedContact.id);
         
-        if (parseInt(updatedContact.id) !== id) {
-            return res.status(400).json({ error: 'Contact ID mismatch' });
-        }
         const database = mongodb.getDb().db('cse341');
 
         const collection = database.collection('contacts');
 
-        const result = await collection.updateOne({ "contacts.id": id }, { $set: { "contacts.$": updatedContact } });
+        // check if the contact exists
+        const contact = await collection.findOne({ "contact_id": id });
+        if (!contact) {
+            return res.status(404).json({ error: 'Contact not found' });
+        }
+        // update the contact with the given id
+        const result = await collection.updateOne({ "contact_id": id }, { $set: updatedContact });
         if (result.modifiedCount === 0) {
             return res.status(400).json({ error: 'Failed to update contact' });
         }
@@ -107,7 +105,8 @@ contactController.deleteContact = async (req, res) => {
 
         const collection = database.collection('contacts');
 
-        const result = await collection.updateOne({}, { $pull: { contacts: { id: id } } });
+        // delete the contact with the given id
+        const result = await collection.deleteOne({ "contact_id": id });
         if (result.modifiedCount === 0) {
             return res.status(400).json({ error: 'Failed to delete contact' });
         }

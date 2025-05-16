@@ -67,11 +67,10 @@ Content-Type: application/json
 }
 
 ### Update Contact
-PUT https://cse341-spring25-7x6l.onrender.com/contacts/4
+PUT https://cse341-spring25-7x6l.onrender.com/contacts/6
 Content-Type: application/json
 
 {
-    "id": 4,
     "firstName": "John",
     "lastName": "Doe",
     "email": "jondoe@mail.com",

@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "61a921f6028954d4f0319e6d"
+  },
+    "contact_id": 1,
+    "firstName": "Jill",
+    "lastName": "Boss",
+    "email": "jillboss@gmail.com",
+    "favoriteColor": "Teal",
+    "birthday": "June 26, 1970"
+},{
+  "_id": {
+    "$oid": "61a921f6028954d4f0319e6e"
+  },
+    "contact_id": 2,
+    "firstName": "Bret",
+    "lastName": "Boss",
+    "email": "bretboss@gmail.com",
+    "favoriteColor": "Auburne",
+    "birthday": "Oct 5, 1971"
+},{
+  "_id": {
+    "$oid": "61a921f6028954d4f0319e6f"
+  },
+    "contact_id": 3,
+    "firstName": "Melanie",
+    "lastName": "Ulrich",
+    "email": "melaniegboss@gmail.com",
+    "favoriteColor": "Yellow",
+    "birthday": "June 30, 1992"
+},{
+  "_id": {
+    "$oid": "61a921f6028954d4f0319e70"
+  },
+    "contact_id": 4,
+    "firstName": "Joshua",
+    "lastName": "Boss",
+    "email": "joshboss@gmail.com",
+    "favoriteColor": "Yellow",
+    "birthday": "1999-09-14"
+},{
+  "_id": {
+    "$oid": "61a921f6028954d4f0319e71"
+  },
+    "contact_id": 5,
+    "firstName": "Nicholas",
+    "lastName": "Boss",
+    "email": "nicholasboss@gmail.com",
+    "favoriteColor": "Orange",
+    "birthday": "1999-09-14"
+}]
