@@ -14,7 +14,7 @@ GET http://localhost:3000/contacts/2
 GET http://localhost:3000/contacts/3
 
 ### Create Contact
-POST http://localhost:3000/contacts/createContact
+POST http://localhost:3000/contacts/
 Content-Type: application/json
 
 {
@@ -26,11 +26,10 @@ Content-Type: application/json
 }
 
 ### Update Contact
-PUT http://localhost:3000/contacts/updateContact/4
+PUT http://localhost:3000/contacts/6
 Content-Type: application/json
 
 {
-    "id": 4,
     "firstName": "John",
     "lastName": "Doe",
     "email": "jondoe@mail.com",
@@ -39,7 +38,7 @@ Content-Type: application/json
 }
 
 ### Delete Contact
-DELETE http://localhost:3000/contacts/deleteContact/4
+DELETE http://localhost:3000/contacts/6
 
 ## Production Development
 ### Get All Contacts
@@ -53,6 +52,12 @@ GET https://cse341-spring25-7x6l.onrender.com/contacts/2
 
 ### Get Contact 3
 GET https://cse341-spring25-7x6l.onrender.com/contacts/3
+
+### Get Contact 4
+GET https://cse341-spring25-7x6l.onrender.com/contacts/4
+
+### Get Contact 5
+GET https://cse341-spring25-7x6l.onrender.com/contacts/5
 
 ### Create Contact
 POST https://cse341-spring25-7x6l.onrender.com/contacts/
@@ -79,4 +84,4 @@ Content-Type: application/json
 }
 
 ### Delete Contact
-DELETE https://cse341-spring25-7x6l.onrender.com/contacts/4
+DELETE https://cse341-spring25-7x6l.onrender.com/contacts/6
