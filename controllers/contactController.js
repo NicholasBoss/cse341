@@ -19,13 +19,30 @@ contactController.getContacts = async (req, res) => {
 
 contactController.getContactById = async (req, res) => {
     try {
-        const id = req.params.id;
-        console.log(req.params.id)
+        let id = req.params.id;
+        const isNumber = !isNaN(id);
+        const isObjectId = /^[0-9a-fA-F]{24}$/.test(id);
+        if (isNumber) { 
+            id = parseInt(id);
+            console.log('id is a number')
+            console.log(id)
+        } else if (isObjectId) {
+            id = id;
+            console.log('id is a string')
+            console.log(id)
+        } else {
+            return res.status(400).json({ error: 'Invalid contact id' });
+        }
+        // console.log(req.params.id)
         const database = mongodb.getDb().db('cse341');
 
         const collection = database.collection('contacts');
 
-        const contact =  await collection.findOne({ "_id": new ObjectId(id) });
+        // get the contact with the given id
+        // if id is a number, use contact_id to get
+        // if id is a string, use _id to get
+        const query = isNumber ? { "contact_id": id } : { "_id": new ObjectId(id) };
+        const contact = await collection.findOne(query);
         if (!contact) {
             return res.status(404).json({ error: 'Contact not found' });
         }
@@ -76,7 +93,19 @@ contactController.updateContact = async (req, res) => {
     try {
         console.log(req.body)
         let id = req.params.id;
-        
+        const isNumber = !isNaN(id);
+        const isObjectId = /^[0-9a-fA-F]{24}$/.test(id);
+        if (isNumber) { 
+            id = parseInt(id);
+            console.log('id is a number')
+            console.log(id)
+        } else if (isObjectId) {
+            id = id;
+            console.log('id is a string')
+            console.log(id)
+        } else {
+            return res.status(400).json({ error: 'Invalid contact id' });
+        }
         const updatedContact = req.body;
         
         const database = mongodb.getDb().db('cse341');
@@ -85,8 +114,17 @@ contactController.updateContact = async (req, res) => {
 
         
         // update the contact with the given id
+        // if id is a number, use contact_id to update
+        // if id is a string, use _id to update (ObjectId)
+        const query = isNumber ? { "contact_id": id } : { "_id": new ObjectId(id) };
+        // check if the contact exists
+        const contact = await collection
+            .findOne(query);
+        if (!contact) {
+            return res.status(404).json({ error: 'Contact not found' });
+        }
         // update the contact
-        const result = await collection.updateOne({ "_id": new ObjectId(id) }, { $set: updatedContact });
+        const result = await collection.updateOne(query, { $set: updatedContact });
         if (result.modifiedCount === 0) {
             return res.status(400).json({ error: 'Failed to update contact' });
         }
@@ -107,9 +145,11 @@ contactController.deleteContact = async (req, res) => {
         const collection = database.collection('contacts');
 
         // delete the contact with the given id
-
-        const result = await collection.deleteOne({ "_id": new ObjectId(id) });
-        if (result.deletedCount === 0) {
+        // if id is a number, use contact_id to delete
+        // if id is a string, use _id to delete
+        const query = isNumber ? { "contact_id": id } : { "_id": new ObjectId(id) };
+        const result = await collection.deleteOne(query);
+        if (result.modifiedCount === 0) {
             return res.status(400).json({ error: 'Failed to delete contact' });
         }
         res.status(200).json({ message: 'Contact deleted successfully' })
