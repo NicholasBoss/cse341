@@ -23,13 +23,13 @@ importers:
       mongodb:
         specifier: ^6.16.0
         version: 6.16.0
-      nodemon:
-        specifier: ^3.1.10
-        version: 3.1.10
       swagger-ui-express:
         specifier: ^5.0.1
         version: 5.0.1(express@5.1.0)
     devDependencies:
+      nodemon:
+        specifier: ^3.1.10
+        version: 3.1.10
       swagger-autogen:
         specifier: ^2.23.7
         version: 2.23.7
