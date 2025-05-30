@@ -1,5 +1,6 @@
 # REST Client for Visual Studio Code
 
+@baseURL = http://localhost:3000
 ## Local Development
 ### Get All Contacts
 GET http://localhost:3000/contacts
@@ -14,7 +15,7 @@ GET http://localhost:3000/contacts/2
 GET http://localhost:3000/contacts/3
 
 ### Create Contact
-POST http://localhost:3000/contacts/
+POST {{baseURL}}/contacts/
 Content-Type: application/json
 
 {
@@ -22,7 +23,7 @@ Content-Type: application/json
     "lastName": "Doe",
     "email": "jondoe@mail.com",
     "favoriteColor": "Black",
-    "birthday": "1985-04-11"
+    "birthday": "1985-04-"
 }
 
 ### Update Contact

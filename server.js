@@ -24,6 +24,24 @@ app.use(expressLayouts)
 
 app.use(static);
 app.use('/', routes);
+
+// File Not Found Route - must be last route in list
+app.use(async (req, res, next) => {
+  next({status: 404, message: 'Oh No! You found a missing page.'})
+})
+
+/* ***********************
+* Express Error Handler
+* Place after all other middleware
+*************************/
+app.use(async (err, req, res, next) => {
+  console.error(`Error at: "${req.originalUrl}": ${err.message}`)
+  if(err.status == 404){ message = err.message} else {message = 'Oh no! There was a crash. Maybe try a different route?'}
+  res.send({
+    status: err.status || 500,
+    message: message
+})
+})
 // app.use('/contacts', contactRoute)
 
 const startServer = async () => {
